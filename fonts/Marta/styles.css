@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Marta';
+  src: url('Marta.eot?#iefix') format('embedded-opentype'),  url('Marta.otf')  format('opentype'),
+	     url('Marta.woff') format('woff'), url('Marta.ttf')  format('truetype'), url('Marta.svg#Marta') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
