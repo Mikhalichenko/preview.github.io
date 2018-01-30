@@ -28,6 +28,13 @@ div.common-title {
 
 section.navigation {
   background: #000;
+  .navbar-toggler {
+    margin-right: 20px;
+    display: block;
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(154, 154, 154)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
 }
 
 section.header {
@@ -39,7 +46,7 @@ section.header {
     img {
       width: 100%;
       display: block;
-      margin: 0 auto;
+      margin: 55px auto 0;
       padding: 0 50px;
     }
     .btn-outline-primary {
@@ -94,6 +101,8 @@ section.block-1 {
     }
     p {
       margin-bottom: 30px;
+      font-family: $paragraph;
+      letter-spacing: 0.3px;
     }
   }
 }
@@ -106,9 +115,108 @@ section.block-2 {
 }
 
 section.block-3 {
-  img {
-    width: 100%;
-    padding-bottom: 30px;
+  .wrapper-block {
+    position: relative;
+    height: 400px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    &:hover {
+      &>img {
+        transform: scale(1.1);
+      }
+    }
+    img {
+      transition: transform 0.3s;
+      width: 100%;
+      height: 400px;
+    }
+    .front {
+      position: absolute;
+      top: 175px;
+      padding: 0 45px;
+      color: #fff;
+      h3 {
+        text-transform: uppercase;
+        font-family: $title-font
+      }
+      p {
+        font-family: $paragraph;
+      }
+      a {
+        text-transform: uppercase;
+        color: #fff;
+        font-family: $paragraph;
+        letter-spacing: 1px;
+        position: relative;
+        &:after {
+          content: '';
+          width: 0;
+          height: 2px;
+          background: #fff;
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          transition: width 0.3s;
+        }
+        &:hover {
+          text-decoration: none;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .back {
+      background: #c20529;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      padding: 50px;
+      h2 {
+        color: #fff;
+        text-transform: uppercase;
+        font-family: $title-font;
+        padding-bottom: 18px;
+      }
+      p {
+        color: #f0c2cb;
+        font-family: $paragraph;
+      }
+      .close-btn {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        width: 25px;
+        height: 25px;
+
+        &:hover {
+          cursor: pointer;
+        }
+        &:before {
+          content: '';
+          width: 3px;
+          height: 25px;
+          background: #db6d82;
+          transform: rotate(-45deg);
+          display: inline-block;
+          position: relative;
+          top: 1px;
+          left: 3px;
+          border-radius: 20px;
+        }
+        &:after {
+          content: '';
+          width: 3px;
+          height: 25px;
+          background: #db6d82;
+          transform: rotate(45deg);
+          display: inline-block;
+          top: 1px;
+          position: relative;
+          border-radius: 20px;
+        }
+      }
+    }
   }
 }
 
